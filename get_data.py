@@ -5,7 +5,7 @@ import pandas as pd
 api_requests = requests.get('https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0001-001?Authorization=Yourkey&format=JSON&elementName=TEMP&parameterName%EF%BC%8C=CITY')
 
 # str to dict
-json_data = json.loads(r.text)
+json_data = json.loads(api_requests.text)
 
 # 取出所要的資料
 data_list = json_data['records']['location']
